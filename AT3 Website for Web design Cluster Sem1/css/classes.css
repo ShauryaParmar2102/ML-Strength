@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-row {
+  display: flex;           /* put cards in a row */
+  gap: 50px;               /* space between cards */
+  justify-content: space-between;
+  flex-wrap: wrap;         /* wrap on smaller screens */
+}
+
+.card {
+  flex: 1;                 /* each card takes equal width */
+  min-width: 250px;        /* prevent cards from being too small */
+  background-color: black;
+  border: 1px solid green;
+  border-radius: 12px;
+  padding: 60px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+/*CSS Combinator*/
+.card h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: white;
+}
+
+
+/* Column / row grid */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.column-img {
+  width: 80%;       /* image fills column */
+  height: auto;     /* maintain aspect ratio */
+  margin-bottom: 10px;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Highlight / info sections */
+.why-choose-us,
+.join-movement,
+.our-philosophy {
+  background-color: #111;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.why-choose-us h1,
+.join-movement h1,
+.our-philosophy h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.why-choose-us p,
+.join-movement p,
+.our-philosophy p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Images for instructors/studios */
+.kirby-img,
+.building-img,
+.maurice-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .column {
+    width: 50%;     /* 2 columns on tablets */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;    /* stack columns on mobile */
+    float: none;
+  }
+
+  .card {
+    padding: 30px;
+    margin: 15px auto;
+  }
+
+  .card-row {
+    gap: 20px;
+  }
+
+  .why-choose-us,
+  .join-movement,
+  .our-philosophy {
+    padding: 25px 15px;
+    margin: 20px auto;
+  }
+
+  .why-choose-us h1,
+  .join-movement h1,
+  .our-philosophy h1 {
+    font-size: 1.6em;
+  }
+
+  .why-choose-us p,
+  .join-movement p,
+  .our-philosophy p {
+    font-size: 1em;
+  }
+
+  .column-img,
+  .kirby-img,
+  .building-img,
+  .maurice-img {
+    width: 100%;
+    margin: 15px auto;
+  }
+}

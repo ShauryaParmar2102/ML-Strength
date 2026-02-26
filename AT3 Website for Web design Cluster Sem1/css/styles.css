@@ -1,0 +1,795 @@
+/* General body styling */
+body {
+  margin: 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.topnav {
+  position: fixed;               /* Stays at top while scrolling */
+  top: 0;                        /* stick to top */
+  left: 0;                       /* start from left edge */
+  width: 100%;                   /* full width */
+  z-index: 1000;                 /* keep above other content */
+  display: flex;
+  align-items: center;           /* vertically center items */
+  justify-content: space-between;/* logo left, links right */
+  gap: 50px;                     /* space between logo and links */
+
+  background-color: #333;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+/* Mobile styling for Postcode field */
+@media screen and (max-width: 600px) {
+  #Postcode {
+    font-size: 20px;   /* makes the text inside bigger */
+    height: 70px;      /* makes the input taller */
+    padding: 15px;     /* increases inner spacing */
+  }
+}
+
+
+.topnav ul {
+  display: flex;        /* horizontal row */
+  list-style: none;     /* remove bullets */
+  margin: 0;
+  padding: 0;
+  gap: 30px;            /* space between links */
+  align-items: center;  /* vertically center links with logo */
+}
+
+.topnav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.topnav ul li a:hover {
+  background-color: #ddd;
+  color: #000;
+  border-radius: 4px;
+}
+
+/* Mobile hamburger */
+.topnav .icon {
+  display: none;       /* hidden by default */
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .topnav ul {
+    display: none;      /* hide links on mobile by default */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    padding: 20px 0;
+  }
+
+  .topnav.responsive ul {
+    display: flex;      /* show when menu toggled */
+  }
+
+  .topnav .icon {
+    display: block;     /* show hamburger on mobile */
+  }
+}
+
+.nav-logo {
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+}
+
+.logo-img {
+  height: 45px;   /* adjust for your logo size */
+  width: auto;
+}
+
+.WCAG-img {
+   height: 35px;   /* adjust for your logo size */
+  width: auto;
+    margin: 20px auto;    
+
+}
+
+.kirby-img{
+width: 100%;          /* makes image fill its container */
+  max-width: 600px;     /* optional: limit the max width */
+  height: auto;         /* keeps aspect ratio */
+  display: block;       /* removes extra space under image */
+  align-items: center;
+  margin: 20px auto;    
+  border-radius: 8px;  
+  -webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.3);  
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+}
+.building-img{
+   width: 100%;          /* makes image fill its container */
+  max-width: 600px;     /* optional: limit the max width */
+  height: auto;         /* keeps aspect ratio */
+  display: block;       /* removes extra space under image */
+  margin: 20px auto;    
+  border-radius: 8px;  
+  -webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.3);  
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+}
+.maurice-img{
+    width: 95%;          /* makes image fill its container */
+  max-width: 600px;     /* optional: limit the max width */
+  height: auto;         /* keeps aspect ratio */
+  display: block;       /* removes extra space under image */
+  margin: 20px auto;    
+  border-radius: 8px;  
+}
+.slogan {
+  color: #f2f2f2;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Make navbar links stay on the right side */
+.topnav a {
+  float: right;
+}
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+/* Default: hide hamburger */
+.topnav a.icon {
+  display: none;
+}
+
+/* Mobile: show hamburger */
+@media screen and (max-width: 600px) {
+  .topnav a.icon {
+    display: block;
+    float: right;
+    font-size: 28px;
+    color: #f2f2f2;
+    cursor: pointer;
+  }
+
+  /* Hide normal links initially */
+  .topnav a:not(.icon) {
+    display: none;
+  }
+
+  /* When menu is open */
+  .topnav.responsive {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; /* logo stays left */
+    position: fixed;
+    top: 0;
+    width: 100%;
+background-color: rgba(51, 51, 51, 0.8); /* semi-transparent dark */
+    z-index: 1000;
+    padding-top: 60px; /* below navbar height */
+  }
+
+  .topnav.responsive a:not(.icon) {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 14px 20px;
+    border-top: 1px solid #444;
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .topnav a {
+    display: none; /* hide all links initially */
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  /* When responsive menu is active */
+  .topnav.responsive {
+    position: fixed;
+  }
+
+  .topnav.responsive a {
+    display: block;          /* stack vertically */
+    text-align: right;       /* align text to the right */
+    padding: 14px 20px;      /* optional spacing */
+    float: none;             /* remove float */
+    border-top: 1px solid #444; /* optional separator between items */
+  }
+
+  .topnav.responsive .icon {
+    position: fixed;
+    right: 0;
+  }
+}
+
+
+
+form {
+  max-width: 90%;     /* shrinks on mobile */
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr; /* one column layout */
+  row-gap: 15px; /* adds spacing between inputs */
+  border-radius: 8px;
+  background-color: black;
+  -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* optional shadow */
+  margin: 0 auto;     /* centers the form horizontally */
+  color: white;
+}
+input:focus {
+  border-color: blueviolet;
+}
+
+input:required {
+  border-left: 10px solid red;
+}
+
+input:valid {
+  border-color: green;  /* input meets minlength/maxlength */
+}
+
+input:invalid {
+  border-color: orange; /* input too short or empty */
+}
+.owner-img {
+  width: 320px; /* sets width */
+  height: auto; /* maintains aspect ratio */
+  border-radius: 8px; /* optional rounded corners */
+}
+.owner-img {
+  border: 5px solid white; /* coloured border around the entire image */
+  border-radius: 0; /* optional: remove rounded corners */
+}
+.ashgrove-img {
+  max-width: 100%;
+  height: auto;
+}
+.column-img{
+  border: 5px solid white; /* coloured border around the entire image */
+  border-radius: 0; /* optional: remove rounded corners */
+}
+.card {
+  border: 1px solid green;      /* your accent color */
+  border-radius: 12px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  padding: 60px;
+  margin: 20px auto;
+}
+.card-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;           /* Put boxes in a row */
+  gap: 50px;               /* space between boxes */
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; /* optional: spread them out */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;         /* allows wrapping on small screens */
+}
+
+.card-row .card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;                 /* each card takes equal width */
+  min-width: 250px;        /* ensures cards don’t get too small */
+  background-color: black; /* card color */
+}
+.card h2 {
+  color: white;  /* descendent selector*/ 
+}
+.card p{
+  color:white
+}
+.info {
+  background-color: #BC4749;   /* red background */
+  color: white;                /* white text */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* Optional: responsive for mobile */
+@media screen and (max-width: 600px) {
+  .owner-img {
+    width: 96%; /* image fills container on small screens */
+    height: auto;
+  }
+}
+
+label {
+  display: block;
+    font-size: 18px;    /* bigger text */
+}
+
+/* ===  FORM STYLING  === */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;               /* text field width */
+  padding: 12px;             /* same padding inside */
+  margin: 8px 0;             /* same spacing between fields */
+  border: 1px solid #ccc;    /* uniform border */
+  border-radius: 4px;        /* rounded corners */
+  font-size: 20px;           /* consistent font size */
+  font-family: inherit;      /* match the form font */
+  display: block;            /* align fields properly */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;    /* include padding & border in width */
+  height: 55px;              /* same height for all fields */
+}
+/* Character counter below textarea or input */
+#comment-count {
+  font-size: 0.9em;
+  color: #ccc;
+  display: block;
+  margin-top: 4px;
+}
+
+#comment-count.warning {
+  color: red; /* below minlength */
+}
+.char-count {
+  font-size: 0.9em;
+  color: #ccc;
+  float: right; /* shows it on the right side */
+  margin-top: 4px;
+}
+
+
+
+input:valid {
+  border: 3px solid green; /* green border when valid */
+}
+
+#comment-count.ok {
+  color: green;  /* meets minlength */
+}
+
+.field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /* puts label on top of text field */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;                /* makes both fields equal width in the row */
+}
+
+.input-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;      /* puts children in a row */
+  
+  gap: 25px;          /* space between the two inputs */
+  
+}
+
+.input-row input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;            /* each input takes equal width */
+}
+@media screen and (max-width: 600px) {
+  .input-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; /* stack inputs vertically on small screens */
+  }
+}
+
+textarea {
+  height: 120px;         
+  resize: vertical;          
+}
+
+/* Consistent placeholder style */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
+  color: #888;
+  font-style: italic;
+}
+input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+  color: #888;
+  font-style: italic;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
+  color: #888;
+  font-style: italic;
+}
+input::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
+  color: #888;
+  font-style: italic;
+}
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Focus effect for all fields */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #04aa6d;
+  -webkit-box-shadow: 0 0 5px rgba(4,170,109,0.5);
+          box-shadow: 0 0 5px rgba(4,170,109,0.5);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+
+input[type="submit"] {
+  width: 100%;
+  background-color: blueviolet;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+footer {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* include padding in width */
+  text-align: center;
+  padding: 10px 0; /* vertical padding only */
+  background-color: lightblue;
+  color: black;
+  margin: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+img {
+  width: 12em; /* makes image fill its container */
+  height: auto; /* keeps aspect ratio */
+  display: block; /* removes extra space under image */
+  max-width: 600px; /* optional: limits max size on large screens */
+  margin: 4.7px; /* adds space on all sides */
+  border-radius: 5px; /* optional: rounded corners */
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 37.33%;
+  padding: 0px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.column-img{
+   width: 80%; /* image fills the column */
+    height: auto; /* maintains aspect ratio */
+    margin-bottom: 10px; /* space between stacked images */
+}
+.why-choose-us {
+  background-color: #111;          /* dark background to match gym theme */
+  color: white;                    /* white text for contrast */
+  padding: 40px 20px;              /* space around content */
+  text-align: center;              /* center all text */
+  border-radius: 10px;             /* smooth corners */
+  margin: 30px auto;               /* spacing from other sections */
+  -webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* subtle depth */
+}
+.why-choose-us h1 {
+  color: white;                  /* highlight color for heading */
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+.why-choose-us p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.our-philosophy {
+   background-color: #111;          /* dark background to match gym theme */
+  color: white;                    /* white text for contrast */
+  padding: 40px 20px;              /* space around content */
+  text-align: center;              /* center all text */
+  border-radius: 10px;             /* smooth corners */
+  margin: 30px auto;               /* spacing from other sections */
+  -webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* subtle depth */
+}
+
+.join-movement{
+   background-color: #111;          /* dark background to match gym theme */
+  color: white;                    /* white text for contrast */
+  padding: 40px 20px;              /* space around content */
+  text-align: center;              /* center all text */
+  border-radius: 10px;             /* smooth corners */
+  margin: 30px auto;               /* spacing from other sections */
+  -webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* subtle depth */
+}
+
+.about-section {
+  background-color: #111;
+  color: white;
+  padding: 40px 30px;           /* space inside box */
+  border-radius: 10px;
+  margin: 30px auto;            /* centers horizontally */
+  -webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  max-width: 1500px;             /* prevent stretching too wide */
+  text-align: left;             /* left-align text */
+  line-height: 2.6;             /* improves readability */
+}
+
+.about-section h1 {
+  color: white;                
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: none;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.about-heading {
+   padding-top: 78px; /* equal or slightly bigger than navbar height */
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 1.6;
+}
+.welcome-section {
+   padding-top: 78px; /* equal or slightly bigger than navbar height */
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 1.6;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .about-heading {
+    margin-top: 140px;      /* more space on tablet */
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-heading {
+    margin-top: 2px;      /* more space on mobile */
+    font-size: 1.6em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about-section {
+    width: 90%;                        /* leaves space from screen edges */
+    padding: 25px 20px;                /* smaller padding on mobile */
+    margin: 20px auto;                 /* keep centered */
+  }
+
+  .about-section h1,
+  .about-section h2,
+  .about-section h3,
+  .about-section b {
+    font-size: 1.6em;                  /* slightly smaller heading on mobile */
+  }
+
+  .about-section p {
+    font-size: 1em;                    /* slightly smaller text */
+  }
+
+  .owner-img {
+    margin: 15px auto;                 /* smaller margin for mobile */
+  }
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 25px; /* increases overall text size */
+  }
+
+  .topnav a {
+    font-size: 20px; /* makes navbar text larger */
+  }
+
+  label,
+  input[type="text"],
+  select,
+  input[type="submit"] {
+    font-size: 18px; /* increases text on form */
+  }
+  #helpLink {
+  color: #BC4749; /* Your accent color */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#helpLink:hover {
+  color: #6A994E;
+}
+#helpVideo {
+  margin-top: 15px;
+  padding: 10px;
+  border: 2px solid #BC4749;
+  border-radius: 10px;
+  background-color: red;
+  width: 100%;        
+  max-width: 100%;      
+  -webkit-box-sizing: border-box;      
+          box-sizing: border-box; 
+}
+
+/* Make the video itself responsive */
+#helpVideo video {
+  width: 100%;
+  height: auto; /* keeps aspect ratio */
+  border-radius: 8px; /* optional, for smooth corners */
+}
+
+
+  footer {
+    font-size: 18px; /* larger footer text */
+  }
+}
+/* Mobile styling */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;     /* each column takes full width */
+    float: none;     /* stack vertically */
+  }
+
+  .column img {
+    width: 100%;     /* image fills its column */
+    height: auto;    /* keeps proportions */
+    margin-bottom: 10px;
+  }
+}
+
+
+.text-container {
+  padding-top: 78px; /* equal or slightly bigger than navbar height */
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 2.6;
+}
+
+
+.text-container h1 {
+  margin-top: 0.1em; /* space above headings */
+  margin-bottom: 0.5em; /* space below headings */
+  font-size: 2em; 
+  text-align: center;
+}
+
+.text-container p {
+  margin-bottom: 1em; /* space between paragraphs */
+  font-size: 1.1em; /* slightly larger for readability */
+  text-align: center
+}
+.content {
+  line-height: 1.6; /* improves readability */
+}
+footer {
+  width: 99vw;          /* full viewport width */
+  margin: 0;             /* remove default margin */
+  padding: 15px 20px;    /* space inside footer */
+  padding: 15px 20px;          /* vertical + horizontal padding */
+  background-color: lightblue; /* your footer background */
+  color: black;
+  text-align: center;           /* center text */
+  box-sizing: border-box;       /* include padding in width */
+}
+

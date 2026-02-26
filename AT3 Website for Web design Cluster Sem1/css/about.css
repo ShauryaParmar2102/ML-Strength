@@ -1,0 +1,232 @@
+/* === GENERAL BODY & BOX-SIZING === */
+body {
+  margin: 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* === NAVBAR STYLING === */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background-color: #333;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+
+.topnav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  align-items: center;
+}
+
+.topnav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.topnav ul li a:hover {
+  background-color: #ddd;
+  color: #000;
+  border-radius: 4px;
+}
+
+.topnav .icon {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* NAVBAR RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .topnav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    padding: 20px 0;
+  }
+
+  .topnav.responsive ul {
+    display: flex;
+  }
+
+  .topnav .icon {
+    display: block;
+  }
+}
+
+/* Logo styling */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+}
+
+/* === ABOUT PAGE CONTENT === */
+.about-section {
+  background-color: #111;
+  color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 1500px;
+  text-align: left;
+  line-height: 2.6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.about-section h1 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-heading {
+  padding-top: 78px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 1.6;
+}
+
+.welcome-section {
+  padding-top: 78px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 1.6;
+}
+
+/* Images */
+.owner-img {
+  width: 320px;
+  height: auto;
+  border-radius: 8px;
+  border: 5px solid white;
+  display: block;
+  margin: 20px auto;
+}
+
+.ashgrove-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.column-img {
+  width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Why Choose Us / Philosophy / Join Movement sections */
+.why-choose-us,
+.our-philosophy,
+.join-movement {
+  background-color: #111;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.why-choose-us h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.why-choose-us p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* TEXT CONTAINER */
+.text-container {
+  padding-top: 78px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 2.6;
+}
+
+.text-container h1 {
+  margin-top: 0.1em;
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.text-container p {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  .about-heading {
+    margin-top: 140px;
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-section {
+    width: 90%;
+    padding: 25px 20px;
+    margin: 20px auto;
+  }
+
+  .about-section h1,
+  .about-section h2,
+  .about-section h3,
+  .about-section b {
+    font-size: 1.6em;
+  }
+
+  .about-section p {
+    font-size: 1em;
+  }
+
+  .owner-img {
+    margin: 15px auto;
+  }
+
+  body {
+    font-size: 25px;
+  }
+
+  .topnav a {
+    font-size: 20px;
+  }
+}
